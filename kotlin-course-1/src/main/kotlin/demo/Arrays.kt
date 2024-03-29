@@ -1,6 +1,5 @@
-package beginner
+package demo
 
-import demo.DummyClass
 import java.math.BigDecimal
 
 fun main() {

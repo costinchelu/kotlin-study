@@ -1,4 +1,4 @@
-package beginner
+package demo
 
 
 fun main() {

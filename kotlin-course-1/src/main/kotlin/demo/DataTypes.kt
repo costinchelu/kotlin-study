@@ -1,6 +1,4 @@
-package beginner
-
-import demo.DummyClass
+package demo
 
 fun main() {
 
