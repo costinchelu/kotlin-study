@@ -1,9 +1,12 @@
 package demo
 
+
 fun main() {
     usingWhen()
     forLoops()
     whileLoops()
+    println(maxOf(3, 5))
+    println(maxOf(5, 2, 8))
 }
 
 fun usingWhen() {
@@ -67,10 +70,6 @@ fun forLoops() {
     for (i in numbers.size - 1 downTo 0) {
         println(numbers[i])
     }
-
-    for (i in numbers.size - 1 until 0) {
-        println(numbers[i])
-    }
 }
 
 fun whileLoops() {
@@ -86,3 +85,15 @@ fun whileLoops() {
         i++
     } while (i < 5)
 }
+
+// standard if
+fun maxOf(a: Int, b: Int): Int {
+    if (a > b) {
+        return a
+    } else {
+        return b
+    }
+}
+
+// expression if
+fun maxOf(a: Int, b: Int, c: Int) = if (a > b && a > c) a else if (b > a && b > c) b else c
