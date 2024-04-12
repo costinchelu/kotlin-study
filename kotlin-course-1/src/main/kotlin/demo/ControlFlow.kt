@@ -1,14 +1,19 @@
 package demo
 
+import java.math.BigDecimal
+import java.math.RoundingMode
+
 
 fun main() {
     usingWhen()
-    forLoops()
-    whileLoops()
-    println(maxOf(3, 5))
-    println(maxOf(5, 2, 8))
+//    ranges()
+//    forLoops()
+//    whileLoops()
+//    println(maxOf(3, 5))
+//    println(maxOf(5, 2, 8))
 }
 
+// the switch statement in Java
 fun usingWhen() {
     val hello = "Hello"
 
@@ -28,6 +33,7 @@ fun usingWhen() {
 
     val temp = 18
 
+    // we can use ranges
     when (temp) {
         in 0..9 -> println("very cold")
         in 10..<20 -> println("a bit cold")
@@ -35,6 +41,7 @@ fun usingWhen() {
         else -> println("hot")
     }
 
+    // we can use expressions
     val description = when {
         temp < 0 -> "very cold"
         temp < 10 -> "a bit cold"
@@ -42,6 +49,41 @@ fun usingWhen() {
         else -> "hot"
     }
     println(description)
+
+    val obj: Any = "I'm actually a string"
+    val obj2: Any = BigDecimal(25.2)
+    val obj3: Any = 44
+
+    val someObject: Any = obj2
+
+    when(someObject) {
+        is String -> println(someObject.uppercase())
+        is BigDecimal -> println((someObject.remainder(BigDecimal(10.5)).setScale(3, RoundingMode.HALF_UP)))
+        is Int -> println("${someObject - 22}")
+    }
+
+    // for expressions we need an else case
+    val resultString = when(someObject) {
+        is String -> someObject.uppercase()
+        is BigDecimal -> someObject.remainder(BigDecimal(10.5)).toPlainString()
+        is Int -> "${someObject - 22}"
+        else -> "No value"
+    }
+    println(resultString)
+}
+
+fun ranges() {
+    val intRange = 1..5
+    val charRange = 'a'..'t'
+    val stringRange = "ACC".. "DEF"
+    val backwardRange = 5 downTo(1)
+    val stepRange = 3..21 step 3
+    val reversedRange = intRange.reversed()
+
+    println(3 in intRange)
+    println('m' in charRange)
+    println("CCCCC" in stringRange)
+    println(3 in backwardRange)
 }
 
 // If your function doesn't return a useful value then its return type is Unit.
@@ -58,6 +100,8 @@ fun forLoops() {
     for (i in 0..4) {
         println(numbers[i])
     }
+
+    numbers.forEach { println(it)}
 
     for (i in numbers.indices) {
         println(numbers[i])
@@ -86,12 +130,14 @@ fun whileLoops() {
     } while (i < 5)
 }
 
-// standard if
+// standard if (with return value)
 fun maxOf(a: Int, b: Int): Int {
-    if (a > b) {
-        return a
+    return if (a > b) {
+        println("a = $a is bigger")
+        a
     } else {
-        return b
+        println("b = $b is bigger")
+        b
     }
 }
 
