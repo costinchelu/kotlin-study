@@ -23,6 +23,10 @@ fun main() {
     if (anys is List<*>) {
         println("any list")
     }
+
+    val mixedList: List<Any> = listOf("string1", BigDecimal.ZERO, BigDecimal("23.587"), "string2", BigDecimal("256"))
+    val bigDecimalsOnly = getElementOfType<BigDecimal>(mixedList)
+    println(bigDecimalsOnly)
 }
 
 
@@ -51,3 +55,26 @@ fun<T> append(item1: T, item2: T)
     where T: CharSequence, T: Appendable {
         println("Result is ${item1.append(item2)}")
     }
+
+// in Kotlin "reification" is a feature that prevents a type to be erased at runtime
+// We get Cannot check for instance of erased type: T when we try this:
+//fun <T> getElementOfType(inputList: List<Any>): List<T> {
+//    var newList: MutableList<T> = mutableListOf()
+//    for (element in inputList) {
+//        if (element is T) {
+//            newList.add(element)
+//        }
+//    }
+//    return newList
+//}
+// we can use this technique when we want to check the type within the function using the generic type
+
+inline fun <reified T> getElementOfType(inputList: List<Any>): List<T> {
+    val newList: MutableList<T> = mutableListOf()
+    for (element in inputList) {
+        if (element is T) {
+            newList.add(element)
+        }
+    }
+    return newList
+}
