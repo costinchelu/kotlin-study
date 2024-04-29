@@ -78,3 +78,35 @@ inline fun <reified T> getElementOfType(inputList: List<Any>): List<T> {
     }
     return newList
 }
+
+// in and out (covariant):
+open class Flower {}
+
+class Rose: Flower() {}
+
+class Garden<out T: Flower> {
+
+    // with out we can use a type or subtype of Flower as a return type
+    val flowers: List<T> = listOf()
+
+    fun pickFlower(i: Int): T = flowers[i]
+}
+
+fun tendGarden(roseGarden: Garden<Rose>) {
+
+    waterGarden(roseGarden)
+}
+
+fun waterGarden(garden: Garden<Flower>) {
+
+}
+
+// in: use the type as a parameter
+class Garden2<in T: Flower> {
+
+    fun plantFlower(flower: T) {
+
+    }
+}
+
+
