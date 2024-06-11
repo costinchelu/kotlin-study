@@ -1,7 +1,8 @@
-.idea/
+**/.idea/
 **/cmake-build-*/
 **/out
 **/target
+**/build
 **/.DS_Store
 **/*.DS_store
 **/.classpath
