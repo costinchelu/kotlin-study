@@ -9,6 +9,10 @@ repositories {
     mavenCentral()
 }
 
+sourceSets.main {
+    java.srcDirs("src/main/java", "src/main/kotlin")
+}
+
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect:2.0.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0-RC")
@@ -19,6 +23,7 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
+
 kotlin {
     jvmToolchain(17)
 }

@@ -3,6 +3,7 @@
 **/out
 **/target
 **/build
+**/.kotlin
 **/.DS_Store
 **/*.DS_store
 **/.classpath
