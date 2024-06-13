@@ -1,0 +1,7 @@
+### GET info 1
+GET http://localhost:8099/6.347202062477044E307/info.0.json
+Accept: application/json
+
+### GET info 2
+GET http://localhost:8099/info.0.json
+Accept: application/json
