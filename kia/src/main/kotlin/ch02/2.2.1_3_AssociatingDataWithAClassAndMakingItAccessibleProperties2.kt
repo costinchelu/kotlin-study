@@ -1,5 +1,7 @@
 package ch02.ex2_1_3_AssociatingDataWithAClassAndMakingItAccessibleProperties2
 
+// getters are created by default
+// setters are created by default for var types
 class Person(
     val name: String,
     var isStudent: Boolean

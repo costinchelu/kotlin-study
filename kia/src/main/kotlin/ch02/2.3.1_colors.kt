@@ -17,5 +17,5 @@ enum class Color(
 }
 
 fun main() {
-    println(Color.BLUE.rgb())
+    println(Color.INDIGO.rgb())
 }
