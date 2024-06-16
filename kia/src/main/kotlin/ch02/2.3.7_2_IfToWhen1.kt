@@ -1,8 +1,11 @@
 package ch02.ex3_7_2_IfToWhen1
 
 interface Expr
+
 class Num(val value: Int) : Expr
+
 class Sum(val left: Expr, val right: Expr) : Expr
+
 
 fun eval(e: Expr): Int =
     when (e) {

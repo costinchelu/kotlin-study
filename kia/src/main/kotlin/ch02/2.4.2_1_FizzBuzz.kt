@@ -1,5 +1,6 @@
 package ch02.FizzBuzz
 
+
 fun fizzBuzz(i: Int) = when {
     i % 15 == 0 -> "FizzBuzz "
     i % 3 == 0 -> "Fizz "

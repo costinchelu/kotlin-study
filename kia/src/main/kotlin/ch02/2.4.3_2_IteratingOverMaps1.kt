@@ -5,4 +5,8 @@ fun main() {
     for ((index, element) in list.withIndex()) {
         println("$index: $element")
     }
+
+    for (indexedElement in list.withIndex()) {
+        println("${indexedElement.index}: ${indexedElement.value}")
+    }
 }

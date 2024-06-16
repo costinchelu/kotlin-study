@@ -1,5 +1,6 @@
 package ch02.ex4_4_2_UsingInToCheckCollectionAndRangeMembership1
 
+
 fun recognize(c: Char) = when (c) {
     in '0'..'9' -> "It's a digit!"
     in 'a'..'z', in 'A'..'Z' -> "It's a letter!"
@@ -7,5 +8,9 @@ fun recognize(c: Char) = when (c) {
 }
 
 fun main() {
-    println(recognize('8'))
+    println(recognize('i'))
+
+    println("Kotlin" in "Java".."Scala")
+    println("kotlin" in "Java".."Scala")
+    println("Kotlin" in setOf("Java", "Scala"))
 }

@@ -8,6 +8,8 @@ fun readNumber(reader: BufferedReader) {
         Integer.parseInt(reader.readLine())
     } catch (e: NumberFormatException) {
         null
+    } finally {
+        reader.close()
     }
 
     println(number)
