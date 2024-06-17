@@ -1,5 +1,8 @@
-package ch03.JoinToStringFinal
+package ch03.JoinToStringUtilityFunction
 
+
+// function can be declared with default parameter values (so when invoking this function we can omit some of the parameters:
+// transformed in an extension function for Collections
 fun <T> Collection<T>.joinToString(
         separator: String = ", ",
         prefix: String = "",
@@ -16,8 +19,25 @@ fun <T> Collection<T>.joinToString(
     return result.toString()
 }
 
+// JvmOverloads instructs the compiler to generate Java overloaded methods, omitting each parameter one by one starting from
+// the last one
+@JvmOverloads
+fun Collection<String>.join(
+    separator: String = ", ",
+    prefix: String = "",
+    postfix: String = ""
+) = joinToString(separator, prefix, postfix)
+
+
 fun main() {
     val list = listOf(1, 2, 3)
-    println(list.joinToString(separator = "; ",
-          prefix = "(", postfix = ")"))
+    val set = setOf(1, 2, 3)
+
+    // we can specify the name of the arguments
+    println(list.joinToString(separator = "; ", prefix = "(", postfix = ")"))
+    println(list.joinToString(prefix = "(", postfix = ")"))
+    println(set.joinToString())
+    println(set.joinToString(" "))
+
+    println(listOf("one", "two", "eight").join(" "))
 }

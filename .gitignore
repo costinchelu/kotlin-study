@@ -5,6 +5,7 @@
 **/build
 **/.vscode
 **/.kotlin
+**/bin
 **/.DS_Store
 **/*.DS_store
 **/.classpath

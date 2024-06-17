@@ -1,5 +1,9 @@
+
+// to make this file available with a custom class name
+@file:JvmName("UsingJoinToString")
 package ch03.JoinToString
 
+// the step by step way
 fun <T> joinToString(
         collection: Collection<T>,
         separator: String,
