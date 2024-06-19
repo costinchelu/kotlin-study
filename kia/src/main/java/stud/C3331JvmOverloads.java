@@ -3,7 +3,8 @@ package stud;
 
 import java.util.List;
 
-import static ch03.JoinToStringUtilityFunction._3_3_3_1_JoinToStringFinalKt.join;
+import static ch03.JoinToStringUtilityFunction._3_2_3_JoinToStringFinalKt.SOME_CONSTANT;
+import static ch03.JoinToStringUtilityFunction._3_2_3_JoinToStringFinalKt.join;
 //import ch03.JoinToStringUtilityFunction._3_3_3_1_JoinToStringFinalKt.*;
 import ch03.JoinToString.UsingJoinToString;
 
@@ -40,5 +41,46 @@ public class C3331JvmOverloads {
         String join5 = UsingJoinToString.joinToString(List.of("str1", "str2", "str3"), " | ", ">>> ", " <<<");
         System.out.println(join5);
 
+        System.out.println(SOME_CONSTANT);
+
+
+        ViewJ viewJ = new ButtonJ();
+        viewJ.click();
+        ViewJ.showOff();
+
+        // package.package.fileKt for accessing (top-level) static methods and attributes
+        // package.package.class for accessing classes
+        ch03.ex3_4_2_NoOverridingForExtensionFunctions1.View view = new ch03.ex3_4_2_NoOverridingForExtensionFunctions1.Button();
+        view.click();
+        ch03.ex3_4_2_NoOverridingForExtensionFunctions1._3_3_4_2_NoOverridingForExtensionFunctions1Kt.showOff(view);
+
+        ch03.ex3_4_2_NoOverridingForExtensionFunctions1.Button button = new ch03.ex3_4_2_NoOverridingForExtensionFunctions1.Button();
+        button.click();
+        ch03.ex3_4_2_NoOverridingForExtensionFunctions1._3_3_4_2_NoOverridingForExtensionFunctions1Kt.showOff(button);
+
+    }
+}
+
+
+class ViewJ {
+
+    public void click() {
+        System.out.println("ViewJ clicked");
+    }
+
+    public static void showOff() {
+        System.out.println("I'm a viewJ");
+    }
+}
+
+class ButtonJ extends ViewJ {
+
+    @Override
+    public void click() {
+        System.out.println("ButtonJ clicked");
+    }
+
+    public static void showOff() {
+        System.out.println("I'm a buttonJ");
     }
 }

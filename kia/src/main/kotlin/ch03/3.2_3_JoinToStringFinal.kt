@@ -40,4 +40,19 @@ fun main() {
     println(set.joinToString(" "))
 
     println(listOf("one", "two", "eight").join(" "))
+
+    performCountOp()
+}
+
+// we can also have top level properties
+// the value of this property will be stored in a static field
+var opCount = 0
+
+// constant
+const val SOME_CONSTANT = 5
+
+fun performCountOp() {
+    opCount++
+    opCount += SOME_CONSTANT
+    println(opCount)
 }
