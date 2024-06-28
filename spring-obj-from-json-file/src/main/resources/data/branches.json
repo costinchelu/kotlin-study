@@ -1,0 +1,35 @@
+{
+  "branches": [
+    {
+      "number": 1,
+      "location": "ST",
+      "name": "Tokyo",
+      "isActive": true,
+      "sourcingEnabled": true
+    },
+    {
+      "number": 2,
+      "location": "RT",
+      "name": "Seoul",
+      "isActive": true
+    },
+    {
+      "number": 3,
+      "location": "QT",
+      "name": "Beijing",
+      "isActive": false
+    },
+    {
+      "number": 4,
+      "location": "MT",
+      "name": "Singapore",
+      "isActive": true
+    },
+    {
+      "number": 5,
+      "location": "ZT",
+      "name": "Bangkok",
+      "isActive": true
+    }
+  ]
+}
