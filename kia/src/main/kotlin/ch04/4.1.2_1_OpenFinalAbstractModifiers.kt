@@ -13,3 +13,10 @@ open class RichButton : Clickable {
 
     override fun click() {}
 }
+
+/*
+by default all Kotlin classes are final, so you can't inherit them
+in Java is the other way around
+
+if you need to allow the creation of subclasses, you need the open modifier
+ */
