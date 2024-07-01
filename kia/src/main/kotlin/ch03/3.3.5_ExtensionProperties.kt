@@ -20,8 +20,7 @@ fun main() {
     println(sb)
 
     println("test".lastChar)
-
-    // in Java, we will need to access the properties using the getters/setters
+}
+    // in Java, we will need to access the properties using the implicit getters/setters
     // Java example: StringUtilKt.getLastChar("test");
     // Java example: StringUtilKt.setLastChar(sb, "!");
-}
