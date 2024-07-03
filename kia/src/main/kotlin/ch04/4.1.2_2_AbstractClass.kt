@@ -1,4 +1,4 @@
-package ch04
+package ch04.ex1_Abstractclass
 
 // abstract class -> can't create an instance of it
 abstract class Animated {
