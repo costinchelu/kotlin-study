@@ -30,6 +30,9 @@ class Demo {
     public static void main(String[] args) {
         C4112Interfaces cls = new C4112Interfaces();
         cls.showOff();
+
+        JavaButton javaButton = new JavaButton();
+        javaButton.showOff();
     }
 }
 
@@ -40,7 +43,11 @@ class JavaButton implements ch04.main.Clickable {
     // default method (showOff). We need to override it in this case.
     @Override
     public void showOff() {
-        ch04.main.Clickable.super.showOff();
+        // still we cannot directly access showOff from Kotlin even though showOff would have an implementation there
+//        ch04.main.Clickable.super.showOff();
+        // to actually use the implementation from Kotlin we would need an intermediary abstract class
+        // created that will implement focusable, and then JavaButton to extend that abstract class
+        System.out.println("Show off from Java");
     }
 
     @Override

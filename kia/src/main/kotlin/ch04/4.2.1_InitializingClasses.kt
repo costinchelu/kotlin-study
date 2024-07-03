@@ -40,6 +40,7 @@ class UserExp
 class UserExp2(nickNameIn: String, isSubscribedIn: Boolean) {
 
     val nickname = nickNameIn
+
     val isSubscribed = isSubscribedIn
 }
 
