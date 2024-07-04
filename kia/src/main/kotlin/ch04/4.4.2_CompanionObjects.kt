@@ -1,8 +1,5 @@
 package ch04.ex4_2_1_CompanionObjects
 
-import ch04.ex4_1_1_ObjectDeclarations.Person
-import com.google.gson.Gson
-
 
 // Kotlin doesn't have a static keyword
 // it relies on package-level functions (replace static methods) and object declarations
