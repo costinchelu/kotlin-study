@@ -1,9 +1,9 @@
-package ro.ccar
+package text.adventure
 
 import java.util.HashMap
 
 
-class KLocation(val locationID: Int, val description: String) {
+open class KLocation(val locationID: Int, val description: String) {
 
     private val exits: MutableMap<String, Int>
 
@@ -17,6 +17,6 @@ class KLocation(val locationID: Int, val description: String) {
     }
 
     protected fun addExit(direction: String, location: Int) {
-        exits.put(direction, location)
+        exits[direction] = location
     }
 }

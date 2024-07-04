@@ -1,11 +1,12 @@
-package ro.ccar;
+package text.adventure;
+
 
 import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
 
-    private static Map<Integer, KLocation> locations = new Locations().locations;
+    static final Map<Integer, KLocation> locations = Locations.locations;
 
     public static void main(String[] args) {
 

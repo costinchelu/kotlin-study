@@ -1,4 +1,4 @@
-package ro.ccar;
+package text.adventure;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,7 +14,7 @@ public class Location {
     public Location(int locationID, String description) {
         this.locationID = locationID;
         this.description = description;
-        this.exits = new HashMap();
+        this.exits = new HashMap<>();
         this.exits.put("Q", 0);
     }
 
@@ -27,7 +27,7 @@ public class Location {
     }
 
     public Map<String, Integer> getExits() {
-        return new HashMap(exits);
+        return new HashMap<>(exits);
     }
 
     protected void addExit(String direction, int location) {

@@ -1,11 +1,12 @@
-package ro.ccar;
+package text.adventure;
+
 
 import java.io.*;
 import java.util.*;
 
 public class Locations {
 
-    public static Map<Integer, KLocation> locations = new HashMap();
+    public static Map<Integer, KLocation> locations = new HashMap<>();
 
     static {
 

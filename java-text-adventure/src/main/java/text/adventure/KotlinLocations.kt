@@ -1,4 +1,4 @@
-package ro.ccar
+package text.adventure
 
 import java.io.File
 
