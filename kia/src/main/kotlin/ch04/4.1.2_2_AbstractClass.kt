@@ -11,7 +11,7 @@ abstract class Animated {
 
     abstract fun animate()                  // this must be implemented in a subclass
 
-    open fun stopAnimating() {}             // non-abstract methods aren't open by default
+    open fun stopAnimating() {}             // non-abstract methods aren't open by default but can be marked as open
 
     fun animateTwice() {}                   // this can't be overridden
 }
@@ -23,6 +23,8 @@ class AnimatedBall(override val animationSpeed: Double) : Animated() {
     override fun animate() {}           // this abstract method must be overridden
 
     override fun stopAnimating() {}     // we are allowed to override this method
+
+    override val frames: Int = 24       // can override frames from superclass as it is marked as open
 }
 
 fun main() {
@@ -33,4 +35,5 @@ fun main() {
     a.animate()
     a.stopAnimating()
     a.animateTwice()
+
 }
