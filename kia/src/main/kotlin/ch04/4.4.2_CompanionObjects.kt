@@ -23,6 +23,7 @@ fun buildNameFromId(accountId: Int) = "soc:$accountId"
 // here is a case of using companion object for factory methods (private constructor, can't be called outside class)
 // a companion object is a regular object declared in a class
 class User private constructor(val username: String) {
+    
     companion object UserFactory {
         fun fromEmail(email: String) = User(email.substringBefore('@'))
         fun fromId(accountId: Int) = User(buildNameFromId(accountId))
