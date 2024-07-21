@@ -8,10 +8,12 @@ fun main() {
     // or
     run { println(42) }
 
-    val sum = { x: Int, y: Int -> x + y }
+    // single line lambda
+    val sum: (Int, Int) -> Int = { x: Int, y: Int -> x + y }
     println(sum(1, 2))
 
-    val sum2 = {
+    // multi-line lambda
+    val sum2: (Int, Int) -> Int = {
         x: Int, y: Int -> println("Computing the sum of $x and $y...")
         x + y
     }

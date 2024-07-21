@@ -1,4 +1,10 @@
-package ch05.ex1_4_2_AccessingVariablesInScope1
+package ch05.ex1_4_1_AccessingVariablesInScope
+
+fun printMessagesWithPrefix(messages: Collection<String>, prefix: String) {
+    messages.forEach {
+        println("$prefix $it")
+    }
+}
 
 fun printProblemCounts(responses: Collection<String>) {
     var clientErrors = 0
@@ -14,7 +20,9 @@ fun printProblemCounts(responses: Collection<String>) {
 }
 
 fun main() {
-    val responses = listOf("200 OK", "418 I'm a teapot",
-                           "500 Internal Server Error")
+    val errors = listOf("403 Forbidden", "404 Not Found")
+    printMessagesWithPrefix(errors, "Error:")
+
+    val responses = listOf("200 OK", "418 I'm a teapot", "500 Internal Server Error")
     printProblemCounts(responses)
 }
