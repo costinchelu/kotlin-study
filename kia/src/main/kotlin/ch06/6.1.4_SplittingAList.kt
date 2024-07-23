@@ -1,4 +1,4 @@
-package ch06.ex1_4_SplittingAListToAPairOfListsPartition
+package ch06.ex1_4_SplittingAList
 
 data class Person(val name: String, val age: Int)
 
