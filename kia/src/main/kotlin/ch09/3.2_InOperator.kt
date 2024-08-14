@@ -14,6 +14,6 @@ fun main() {
     val rectangle = Rectangle(Point(10, 20), Point(50, 50))
     println(Point(20, 30) in rectangle)
     // true
-    println(Point(9, 51) in rectangle)
+    println(Point(9, 40) in rectangle)
     // false
 }

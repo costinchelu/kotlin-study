@@ -1,4 +1,4 @@
-package ch09.PointPlusMember
+package ch09.OperatorMember
 
 data class Point(val x: Int, val y: Int) {
 
