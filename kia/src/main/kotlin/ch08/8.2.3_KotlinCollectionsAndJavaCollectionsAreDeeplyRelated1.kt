@@ -1,9 +1,9 @@
-package ch08.ex2_3_2_KotlinCollectionsAndJavaCollectionsAreDeeplyRelated1
+package ch08.ex2_3_KotlinCollectionsAndJavaCollectionsAreDeeplyRelated
 
 import ch08.CollectionUtils
 
-// Kotlin
-// collections.kt
+// Kotlin - collections.kt
+// Java code can modify the collection even if it is declared read-only in Kotlin
 fun printInUppercase(list: List<String>) {
     println(CollectionUtils.uppercaseAll(list))
     println(list.first())
