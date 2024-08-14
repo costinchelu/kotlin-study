@@ -12,8 +12,10 @@ operator fun Rectangle.contains(p: Point): Boolean {
 
 fun main() {
     val rectangle = Rectangle(Point(10, 20), Point(50, 50))
-    println(Point(20, 30) in rectangle)
-    // true
-    println(Point(9, 40) in rectangle)
-    // false
+
+    println(Point(20, 30) in rectangle)     // true
+    println(Point(9, 40) in rectangle)      // false
+
+    println(Point(10, 49) in rectangle)     // true
+    println(rectangle.contains(Point(10, 49)))  // true
 }
