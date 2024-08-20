@@ -1,4 +1,4 @@
-package ch09.ex1_EqualityOperators
+package ch09.EqualityOperators
 
 class Point(val x: Int, val y: Int) {
 

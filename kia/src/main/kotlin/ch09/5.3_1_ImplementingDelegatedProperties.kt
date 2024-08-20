@@ -4,8 +4,11 @@ fun interface Observer {
     fun onChange(name: String, oldValue: Any?, newValue: Any?)
 }
 
+
 open class Observable {
+
     val observers = mutableListOf<Observer>()
+
     fun notifyObservers(propName: String, oldValue: Any?, newValue: Any?) {
         for (obs in observers) {
             obs.onChange(propName, oldValue, newValue)
@@ -15,6 +18,7 @@ open class Observable {
 
 
 class Person(val name: String, age: Int, salary: Int) : Observable() {
+
     var age: Int = age
         set(newValue) {
             val oldValue = field
@@ -34,8 +38,10 @@ class Person(val name: String, age: Int, salary: Int) : Observable() {
         }
 }
 
+
 fun main() {
     val p = Person("Seb", 28, 1000)
+
     p.observers += Observer { propName, oldValue, newValue ->
         println(
             """
@@ -43,8 +49,6 @@ fun main() {
             """.trimIndent()
         )
     }
-    p.age = 29
-    // Property age changed from 28 to 29!
-    p.salary = 1500
-    // Property salary changed from 1000 to 1500!
+    p.age = 29          // Property age changed from 28 to 29!
+    p.salary = 1500     // Property salary changed from 1000 to 1500!
 }

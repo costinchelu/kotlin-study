@@ -1,4 +1,4 @@
-package ch09.ex2_2_OrderingOperators
+package ch09.OrderingOperators
 
 class Person(val firstName: String, val lastName: String) : Comparable<Person> {
 

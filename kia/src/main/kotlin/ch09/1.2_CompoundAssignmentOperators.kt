@@ -1,4 +1,4 @@
-package ch09.ex2_CompoundAssignmentOperators
+package ch09.CompoundAssignmentOperators
 
 data class Point(val x: Int, val y: Int)
 

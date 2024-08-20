@@ -1,4 +1,4 @@
-package ch09.ex2_InOperator
+package ch09.InOperator
 
 data class Point(val x: Int, val y: Int)
 

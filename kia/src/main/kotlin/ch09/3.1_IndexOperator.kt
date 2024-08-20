@@ -1,4 +1,4 @@
-package ch09.ex3_1_IndexOperator
+package ch09.IndexOperator
 
 
 data class Point(val x: Int, val y: Int)

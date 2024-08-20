@@ -1,4 +1,4 @@
-package ch09.ex1_2_OperatorExtension
+package ch09.OperatorExtension
 
 
 data class Point(val x: Int, val y: Int)

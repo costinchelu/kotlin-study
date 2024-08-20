@@ -1,4 +1,4 @@
-package ch09.ex3_4_ImplementingYourOwnDelegatedProperties3
+package ch09.ImplementingYourOwnDelegatedProperties3
 
 import ch09.ImplementingDelegatedProperties.Observable
 import kotlin.properties.Delegates
