@@ -2,11 +2,7 @@ package ch09.ImplementingYourOwnDelegatedProperties1
 
 import ch09.ImplementingDelegatedProperties.Observable
 
-class ObservableProperty(
-    val propName: String,
-    var propValue: Int,
-    val observable: Observable,
-    ) {
+class ObservableProperty(val propName: String, var propValue: Int, val observable: Observable) {
 
     fun getValue(): Int = propValue
 

@@ -1,5 +1,6 @@
 package ch09.ImplementingDelegatedProperties
 
+// Observer Design Pattern
 fun interface Observer {
     fun onChange(name: String, oldValue: Any?, newValue: Any?)
 }
@@ -40,15 +41,24 @@ class Person(val name: String, age: Int, salary: Int) : Observable() {
 
 
 fun main() {
-    val p = Person("Seb", 28, 1000)
+    val p1 = Person("Seb", 28, 1000)
+    val p2 = Person("John", 35, 1200)
 
-    p.observers += Observer { propName, oldValue, newValue ->
-        println(
-            """
-            Property $propName changed from $oldValue to $newValue!
-            """.trimIndent()
-        )
+    // add observers
+    p1.observers += Observer { propName, oldValue, newValue ->
+        println("obs1 -> Property $propName for ${p1.name} changed from $oldValue to $newValue!")
     }
-    p.age = 29          // Property age changed from 28 to 29!
-    p.salary = 1500     // Property salary changed from 1000 to 1500!
+
+    p1.observers += Observer { propName, oldValue, newValue ->
+        println("obs2 -> Property $propName for ${p1.name} changed from $oldValue to $newValue!")
+    }
+
+    p2.observers += Observer { propName, oldValue, newValue ->
+        println("obs1 -> Property $propName for ${p2.name} changed from $oldValue to $newValue!")
+    }
+
+    // all observers will be notified
+    p1.age = 29
+    p2.age = 36
+    p1.salary = 1500
 }

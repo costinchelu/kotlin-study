@@ -4,6 +4,7 @@ import ch09.ImplementingDelegatedProperties.Observable
 import kotlin.reflect.KProperty
 
 class ObservableProperty(var propValue: Int, val observable: Observable) {
+
     operator fun getValue(thisRef: Any?, prop: KProperty<*>): Int = propValue
 
     operator fun setValue(thisRef: Any?, prop: KProperty<*>, newValue: Int) {
