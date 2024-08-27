@@ -1,4 +1,4 @@
-package ch02.ex2_1_3_AssociatingDataWithAClassAndMakingItAccessibleProperties2
+package ch02.Person
 
 // getters are created by default
 // setters are created by default for var types

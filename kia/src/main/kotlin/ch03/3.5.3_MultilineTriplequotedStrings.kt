@@ -1,4 +1,4 @@
-package ch03.ex5_3_1_MultilineTriplequotedStrings
+package ch03.MultilineTriplequotedStrings
 
 import org.intellij.lang.annotations.Language
 

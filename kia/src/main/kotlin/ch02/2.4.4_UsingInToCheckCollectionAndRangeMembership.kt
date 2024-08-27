@@ -1,4 +1,7 @@
-package ch02.ex4_4_2_UsingInToCheckCollectionAndRangeMembership1
+package ch02.ex4_4_UsingInToCheckCollectionAndRangeMembership
+
+fun isLetter(c: Char) = c in 'a'..'z' || c in 'A'..'Z'
+fun isNotDigit(c: Char) = c !in '0'..'9'
 
 
 fun recognize(c: Char) = when (c) {
@@ -8,6 +11,9 @@ fun recognize(c: Char) = when (c) {
 }
 
 fun main() {
+    println(isLetter('q'))
+    println(isNotDigit('x'))
+
     println(recognize('i'))
 
     println("Kotlin" in "Java".."Scala")

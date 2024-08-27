@@ -1,8 +1,20 @@
 package ch10.ex5_2_ReturningFunctionsFromFunctions1
 
+
+// returning a function (conditioned by a delivery type)
+fun getShippingCostCalculator(delivery: Delivery): (Order) -> Double {
+    if (delivery == Delivery.EXPEDITED) {
+        return { order -> 6 + 2.1 * order.itemCount }
+    } else {
+        return { order -> 1.2 * order.itemCount }
+    }
+}
+
 enum class Delivery { STANDARD, EXPEDITED }
 
 class Order(val itemCount: Int)
+
+
 
 data class Person(
     val firstName: String,
@@ -24,26 +36,18 @@ class ContactListFilters {
             return startsWithPrefix
         }
         return {
-            startsWithPrefix(it)
-                    && it.phoneNumber != null
+            startsWithPrefix(it) && it.phoneNumber != null
         }
     }
 }
 
 
-fun getShippingCostCalculator(delivery: Delivery): (Order) -> Double {
-    if (delivery == Delivery.EXPEDITED) {
-        return { order -> 6 + 2.1 * order.itemCount }
-    }
-
-    return { order -> 1.2 * order.itemCount }
-}
-
-
 fun main() {
-
-    val calculator = getShippingCostCalculator(Delivery.EXPEDITED)
-    println("Shipping costs ${calculator(Order(3))}")       // Shipping costs 12.3
+    val order = Order(3)
+    val calculateFastDelivery = getShippingCostCalculator(Delivery.EXPEDITED)
+    val calculateStandardDelivery = getShippingCostCalculator(Delivery.STANDARD)
+    println("Shipping costs for fast delivery: ${calculateFastDelivery(order)}")
+    println("Shipping costs for standard delivery: ${calculateStandardDelivery(order)}")
 
 
     val contacts = listOf(

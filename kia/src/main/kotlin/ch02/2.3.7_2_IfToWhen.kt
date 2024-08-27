@@ -1,4 +1,4 @@
-package ch02.ex3_7_2_IfToWhen1
+package ch02.ex3_7_2_IfToWhen
 
 interface Expr
 

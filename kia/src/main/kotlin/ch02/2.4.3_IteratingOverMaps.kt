@@ -16,4 +16,14 @@ fun main() {
     for ((letter, binary) in binaryReps) {
         println("$letter = $binary")
     }
+
+
+    val list = listOf("10", "11", "1001")
+    for ((index, element) in list.withIndex()) {
+        println("$index: $element")
+    }
+
+    for (indexedElement in list.withIndex()) {
+        println("${indexedElement.index}: ${indexedElement.value}")
+    }
 }
