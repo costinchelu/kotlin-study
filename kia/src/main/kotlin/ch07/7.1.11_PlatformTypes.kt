@@ -1,4 +1,4 @@
-package ch07.ex1_11_1_PlatformTypes
+package ch07.latformTypes
 
 import ch07.Person
 

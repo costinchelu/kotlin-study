@@ -1,4 +1,4 @@
-package ch08.ex2_3_KotlinCollectionsAndJavaCollectionsAreDeeplyRelated
+package ch08.KotlinCollectionsAndJavaCollectionsAreDeeplyRelated
 
 import ch08.CollectionUtils
 

@@ -1,4 +1,4 @@
-package ch07.ex1_4_ProvidingDefaultValuesInNullcasesWithTheElvisOperator1
+package ch07.ProvidingDefaultValuesInNullcasesWithTheElvisOperator
 
 class Address(val streetAddress: String, val zipCode: Int, val city: String, val country: String)
 

@@ -1,4 +1,4 @@
-package ch03.ex3_4_2_NoOverridingForExtensionFunctions1
+package ch03.NoOverridingForExtensionFunctions
 
 
 /*
