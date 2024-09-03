@@ -1,4 +1,4 @@
-package ch10.ex5_2_ReturningFunctionsFromFunctions1
+package ch10.ReturningFunctionsFromFunctions
 
 
 // returning a function (conditioned by a delivery type)
@@ -26,17 +26,18 @@ class ContactListFilters {
 
     var prefix: String = ""
 
-    var onlyWithPhoneNumber: Boolean = false
+    var onlyWithPhoneNumber: Boolean = false // default false
 
+    // declare a function that returns a function
     fun getPredicate(): (Person) -> Boolean {
-        val startsWithPrefix = { p: Person ->
-            p.firstName.startsWith(prefix) || p.lastName.startsWith(prefix)
-        }
+        val startsWithPrefixPredicate = { p: Person -> p.firstName.startsWith(prefix) || p.lastName.startsWith(prefix) }
         if (!onlyWithPhoneNumber) {
-            return startsWithPrefix
+            return startsWithPrefixPredicate
+            // will just return the boolean (basic case - no phone number needed)
         }
         return {
-            startsWithPrefix(it) && it.phoneNumber != null
+            startsWithPrefixPredicate(it) && it.phoneNumber != null
+            // will return a processed boolean (checks for the existence of a phone number)
         }
     }
 }
@@ -60,10 +61,13 @@ fun main() {
         prefix = "Dm"
         onlyWithPhoneNumber = true
     }
-    println(
-        contacts.filter(contactListFilters.getPredicate())
-    )
-    // [Person(firstName=Dmitry, lastName=Jemerov, phoneNumber=123-4567)]
 
+    // the filter method accepts a predicate as parameter and returns only the items evaluated by the parameter
+    println(contacts.filter(contactListFilters.getPredicate()))     // [Person(firstName=Dmitry, lastName=Jemerov, phoneNumber=123-4567)]
+
+    with(contactListFilters) {
+        prefix = "Sv"
+        onlyWithPhoneNumber = true
+    }
+    println(contacts.filter(contactListFilters.getPredicate()))   // []
 }
-

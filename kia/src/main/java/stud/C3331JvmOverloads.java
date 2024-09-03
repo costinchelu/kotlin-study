@@ -7,6 +7,9 @@ import static ch03.JoinToStringUtilityFunction._3_2_3_JoinToStringFinalKt.SOME_C
 import static ch03.JoinToStringUtilityFunction._3_2_3_JoinToStringFinalKt.join;
 //import ch03.JoinToStringUtilityFunction._3_3_3_1_JoinToStringFinalKt.*;
 import ch03.JoinToString.UsingJoinToString;
+import ch03.NoOverridingForExtensionFunctions.Button;
+import ch03.NoOverridingForExtensionFunctions.View;
+import ch03.NoOverridingForExtensionFunctions._3_3_4_NoOverridingForExtensionFunctionsKt;
 
 
 public class C3331JvmOverloads {
@@ -50,13 +53,13 @@ public class C3331JvmOverloads {
 
         // package.package.fileKt for accessing (top-level) static methods and attributes
         // package.package.class for accessing classes
-        ch03.ex3_4_2_NoOverridingForExtensionFunctions1.View view = new ch03.ex3_4_2_NoOverridingForExtensionFunctions1.Button();
+        View view = new Button();
         view.click();
-        ch03.ex3_4_2_NoOverridingForExtensionFunctions1._3_3_4_2_NoOverridingForExtensionFunctions1Kt.showOff(view);
+        _3_3_4_NoOverridingForExtensionFunctionsKt.showOff(view);
 
-        ch03.ex3_4_2_NoOverridingForExtensionFunctions1.Button button = new ch03.ex3_4_2_NoOverridingForExtensionFunctions1.Button();
+        Button button = new Button();
         button.click();
-        ch03.ex3_4_2_NoOverridingForExtensionFunctions1._3_3_4_2_NoOverridingForExtensionFunctions1Kt.showOff(button);
+        _3_3_4_NoOverridingForExtensionFunctionsKt.showOff(button);
 
     }
 }
