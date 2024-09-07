@@ -7,6 +7,5 @@ fun printFirst(list: List<*>) {
 }
 
 fun main() {
-    printFirst(listOf("Sveta", "Seb", "Dima", "Roman"))
-    // Sveta
+    printFirst(listOf("Sveta", "Seb", "Dima", "Roman"))             // Sveta
 }

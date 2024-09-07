@@ -1,4 +1,4 @@
-package ch11.ex6_4_StarProjection3
+package ch11.ex6_4_StarProjection
 
 import kotlin.reflect.KClass
 
@@ -40,8 +40,6 @@ fun main() {
     Validators.registerValidator(String::class, DefaultStringValidator)
     Validators.registerValidator(Int::class, DefaultIntValidator)
 
-    println(Validators[String::class].validate("Kotlin"))
-    // true
-    println(Validators[Int::class].validate(42))
-    // true
+    println(Validators[String::class].validate("Kotlin"))               // true
+    println(Validators[Int::class].validate(42))                        // true
 }

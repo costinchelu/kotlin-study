@@ -5,6 +5,5 @@ fun printContents(list: List<Any>) {
 }
 
 fun main() {
-    printContents(listOf("abc", "bac"))
-    // abc, bac
+    printContents(listOf("abc", "bac"))                 // abc, bac
 }
