@@ -45,7 +45,7 @@ fun usingLet() {
 
     val confirm1: String? = if (addr != null) sendNotification(addr) else null
 
-    // LET will run the lambda only if addr is non-null
+    // LET will run the lambda (send the notification) ONLY IF ADDR IS NON-NULL
     val confirm2: String? = addr?.let { sendNotification(it) }
 }
 
