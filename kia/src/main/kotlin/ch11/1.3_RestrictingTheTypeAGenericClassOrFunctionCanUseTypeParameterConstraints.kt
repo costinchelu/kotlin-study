@@ -19,12 +19,22 @@ fun <T> ensureTrailingPeriod(seq: T) where
     }
 }
 
+// Without an upper bound, a nullable value can be used (so process(null) would be possible)
+// Even if we are not intending to add an upper bound,
+// if we need a non-nullable type we should at least use Any as un upper bound,
+// or we can use a specific definitely non-nullable syntax at its use site (fun process(t: T & Any) {} )
+class Processor<T: Any> {
+    fun process(value: T) {
+        value.hashCode()
+    }
+}
+
 fun main() {
-    println(oneHalf(3))                         // 1.5
+    println(oneHalf(3))                    // 1.5
 
     println(max("kotlin", "java"))              // kotlin
 
     val helloWorld = StringBuilder("Hello World")
     ensureTrailingPeriod(helloWorld)
-    println(helloWorld)                         //Hello World.
+    println(helloWorld)                         // Hello World.
 }
