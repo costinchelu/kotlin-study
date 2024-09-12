@@ -15,21 +15,16 @@ object DefaultIntValidator : FieldValidator<Int> {
 }
 
 object Validators {
-    private val validators =
-        mutableMapOf<KClass<*>, FieldValidator<*>>()
+    private val validators = mutableMapOf<KClass<*>, FieldValidator<*>>()
 
-    fun <T : Any> registerValidator(
-        kClass: KClass<T>, fieldValidator: FieldValidator<T>,
-    ) {
+    fun <T : Any> registerValidator(kClass: KClass<T>, fieldValidator: FieldValidator<T>) {
         validators[kClass] = fieldValidator
     }
 
     @Suppress("UNCHECKED_CAST")
     operator fun <T : Any> get(kClass: KClass<T>): FieldValidator<T> =
         validators[kClass] as? FieldValidator<T>
-            ?: throw IllegalArgumentException(
-                "No validator for ${kClass.simpleName}"
-            )
+            ?: throw IllegalArgumentException("No validator for ${kClass.simpleName}")
 }
 
 fun main() {
