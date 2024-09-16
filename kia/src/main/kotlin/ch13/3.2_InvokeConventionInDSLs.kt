@@ -1,13 +1,12 @@
 package ch13.ex2_InvokeConventionInDSLs
 
 class DependencyHandler {
+
     fun implementation(coordinate: String) {
         println("Added dependency on $coordinate")
     }
 
-    operator fun invoke(
-        body: DependencyHandler.() -> Unit,
-    ) {
+    operator fun invoke(body: DependencyHandler.() -> Unit) {
         body()
     }
 }

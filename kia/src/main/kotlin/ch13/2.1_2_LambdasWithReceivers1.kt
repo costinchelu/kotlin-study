@@ -1,8 +1,6 @@
 package ch13.ex1_2_LambdasWithReceivers1
 
-fun buildString(
-    builderAction: StringBuilder.() -> Unit,
-): String {
+fun buildString(builderAction: StringBuilder.() -> Unit): String {
     val sb = StringBuilder()
     sb.builderAction()
     return sb.toString()
@@ -13,6 +11,5 @@ fun main() {
         this.append("Hello, ")
         append("World!")
     }
-    println(s)
-    // Hello, World!
+    println(s)                          // Hello, World!
 }

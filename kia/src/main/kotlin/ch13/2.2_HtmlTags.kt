@@ -1,10 +1,11 @@
-package ch13.ex2_2_UsingLambdasWithReceiversInHTMLBuilders1
+package ch13.HtmlTags
 
 @DslMarker
 annotation class HtmlTagMarker
 
 @HtmlTagMarker
 open class Tag(val name: String) {
+
     private val children = mutableListOf<Tag>()
 
     protected fun <T : Tag> doInit(child: T, init: T.() -> Unit) {
@@ -12,8 +13,7 @@ open class Tag(val name: String) {
         children.add(child)
     }
 
-    override fun toString() =
-        "<$name>${children.joinToString("")}</$name>"
+    override fun toString() = "<$name>${children.joinToString("")}</$name>"
 }
 
 fun table(init: TABLE.() -> Unit) = TABLE().apply(init)
@@ -36,18 +36,17 @@ fun createTable() =
         }
     }
 
-fun createAnotherTable() = table {
-    for (i in 1..2) {
-        tr {
-            td {
+fun createAnotherTable() =
+    table {
+        for (i in 1..2) {
+            tr {
+                td {
+                }
             }
         }
-    }
 }
 
 fun main() {
-    println(createTable())
-    // <table><tr><td></td></tr></table>
-    println(createAnotherTable())
-    // <table><tr><td></td></tr><tr><td></td></tr></table>
+    println(createTable())              // <table><tr><td></td></tr></table>
+    println(createAnotherTable())       // <table><tr><td></td></tr><tr><td></td></tr></table>
 }
