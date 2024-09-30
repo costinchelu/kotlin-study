@@ -1,4 +1,4 @@
-package ch13.ex2_ExtensionsOnPrimitiveTypes
+package ch13.ExtensionsOnPrimitiveTypes
 
 import kotlin.time.Duration
 import kotlin.time.DurationUnit
