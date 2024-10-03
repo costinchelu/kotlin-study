@@ -10,7 +10,7 @@ import kotlin.time.Duration.Companion.seconds
 
 fun main() {
     runBlocking {
-        launch(Dispatchers.Default) { // <1>
+        launch(Dispatchers.Default) {
             var x = 0
             repeat(10_000) {
                 x++
@@ -26,7 +26,7 @@ fun main2() {
     runBlocking {
         var x = 0
         repeat(10_000) {
-            launch(Dispatchers.Default) { // <1>
+            launch(Dispatchers.Default) {
                 x++
             }
         }

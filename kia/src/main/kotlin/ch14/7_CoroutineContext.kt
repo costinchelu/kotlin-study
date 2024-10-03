@@ -7,7 +7,7 @@ import kotlinx.coroutines.runBlocking
 import kotlin.coroutines.coroutineContext
 
 suspend fun introspect() {
-    log(coroutineContext) // <1>
+    log(coroutineContext)
 }
 
 fun main() {

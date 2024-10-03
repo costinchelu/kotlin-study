@@ -9,7 +9,6 @@ class Greeter(val greeting: String) {
 
 // we can call the Greeter object as a function using the invoke function convention.
 // Invoke can have different parameters and return types and can even be overloaded
-// for example
 fun main() {
     val bavarianGreeter = Greeter("Servus")
     bavarianGreeter("Dmitry")                       // Servus, Dmitry!	[object called like a function]

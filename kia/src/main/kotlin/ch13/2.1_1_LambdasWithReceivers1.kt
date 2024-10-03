@@ -1,4 +1,5 @@
 package ch13.LambdaWithReceivers1
+
 // Using a regular lambda -> we need to add it. for each operation in the lambda
 fun buildStringRegularLambda(builderAction: (StringBuilder) -> Unit): String {
     val sb = StringBuilder()
