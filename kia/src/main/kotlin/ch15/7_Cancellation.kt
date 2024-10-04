@@ -1,4 +1,4 @@
-package ch15
+package ch15.Cancellation
 
 import kia2e.coroutines.log
 import kotlinx.coroutines.async
@@ -9,18 +9,18 @@ import kotlin.time.Duration.Companion.milliseconds
 
 fun main() {
     runBlocking {
-        val launchedJob = launch { // <1>
+        val launchedJob = launch {
             log("I'm launched!")
             delay(1000.milliseconds)
             log("I'm done!")
         }
-        val asyncDeferred = async { // <2>
+        val asyncDeferred = async {
             log("I'm async")
             delay(1000.milliseconds)
             log("I'm done!")
         }
         delay(200.milliseconds)
-        launchedJob.cancel() // <3>
-        asyncDeferred.cancel() // <3>
+        launchedJob.cancel()
+        asyncDeferred.cancel()
     }
 }

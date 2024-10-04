@@ -1,4 +1,4 @@
-package ch15
+package ch15.ResourceLeaks
 
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

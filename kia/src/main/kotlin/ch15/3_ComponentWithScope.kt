@@ -1,4 +1,4 @@
-package ch15.ex2_AssociatingCoroutineScopesWithComponentsCoroutineScope
+package ch15.AssociatingCoroutineScopesWithComponentsCoroutineScope
 
 import kia2e.coroutines.log
 import kotlinx.coroutines.*

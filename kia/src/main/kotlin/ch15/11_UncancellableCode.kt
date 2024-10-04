@@ -1,4 +1,4 @@
-package ch15
+package ch15.UncancellableCode
 
 import kia2e.coroutines.log
 import kotlinx.coroutines.delay
@@ -11,7 +11,7 @@ suspend fun doCpuHeavyWork(): Int {
     var counter = 0
     val startTime = System.currentTimeMillis()
     while (System.currentTimeMillis() < startTime + 500) {
-        counter++ // <1>
+        counter++
     }
     return counter
 }

@@ -1,4 +1,4 @@
-package ch15
+package ch15.SwallingExceptions
 
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
@@ -7,7 +7,7 @@ import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.Duration.Companion.seconds
 
 suspend fun doWork() {
-    delay(500.milliseconds) // <1>
+    delay(500.milliseconds)
     throw UnsupportedOperationException("Didn't work!")
 }
 
@@ -17,7 +17,7 @@ fun main() {
             while (true) {
                 try {
                     doWork()
-                } catch (e: Exception) { // <2>
+                } catch (e: Exception) {
                     println("Oops: ${e.message}")
                 }
             }

@@ -1,4 +1,4 @@
-package ch15
+package ch15.CancellingAllChildCoroutines
 
 import kia2e.coroutines.log
 import kotlinx.coroutines.delay
@@ -10,7 +10,7 @@ fun main() = runBlocking {
     val job = launch {
         launch {
             launch {
-                launch { // <1>
+                launch {
                     log("I'm started")
                     delay(500.milliseconds)
                     log("I'm done!")

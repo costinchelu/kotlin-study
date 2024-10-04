@@ -1,4 +1,4 @@
-package ch15.improved
+package ch15.Yield
 
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking

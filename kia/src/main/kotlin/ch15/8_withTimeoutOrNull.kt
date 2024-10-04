@@ -1,4 +1,4 @@
-package ch15
+package ch15.TimeoutOrNull
 
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
@@ -17,6 +17,7 @@ fun main() = runBlocking {
     }
     println(quickResult)
     // null
+
     val slowResult = withTimeoutOrNull(5.seconds) {
         calculateSomething()
     }

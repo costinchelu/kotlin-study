@@ -1,4 +1,4 @@
-package ch15
+package ch15.MultipleCoroutines
 
 import kia2e.coroutines.log
 import kotlinx.coroutines.delay
@@ -8,16 +8,20 @@ import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.Duration.Companion.seconds
 
 fun main() {
-    runBlocking { // this: CoroutineScope <1>
-        launch { // this: CoroutineScope <2>
+    runBlocking {
+        log("Parent start")
+        launch {
+            log("Child 1 started")
             delay(1.seconds)
             launch {
+                log("Grandchild started")
                 delay(250.milliseconds)
-                log("Grandchild done")
+                log("Grandchild done!")
             }
             log("Child 1 done!")
         }
         launch {
+            log("Child 2 started")
             delay(500.milliseconds)
             log("Child 2 done!")
         }

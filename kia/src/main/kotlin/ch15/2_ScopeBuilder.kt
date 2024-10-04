@@ -1,4 +1,4 @@
-package ch15
+package ch15.ScopeBuilder
 
 import kia2e.coroutines.log
 import kotlinx.coroutines.async
@@ -13,12 +13,12 @@ suspend fun generateValue(): Int {
     return Random.nextInt(0, 10)
 }
 
-suspend fun computeSum() { // <1>
+suspend fun computeSum() {
     log("Computing a sum...")
-    val sum = coroutineScope { // <2>
+    val sum = coroutineScope {
         val a = async { generateValue() }
         val b = async { generateValue() }
-        a.await() + b.await() // <3>
+        a.await() + b.await()
     }
     log("Sum is $sum")
 }
