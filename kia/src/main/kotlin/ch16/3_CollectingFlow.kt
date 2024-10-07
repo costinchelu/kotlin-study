@@ -14,9 +14,24 @@ val letters = flow {
     emit("B")
 }
 
-fun main() = runBlocking {
-    letters.collect {
-        log("Collecting $it")
-        delay(500.milliseconds)
+fun main() {
+
+    runBlocking {
+        letters.collect {
+            log("Collecting $it")
+            delay(500.milliseconds)
+        }
+    }
+
+
+    runBlocking {
+        letters.collect {
+            log("(1) Collecting $it")
+            delay(500.milliseconds)
+        }
+        letters.collect {
+            log("(2) Collecting $it")
+            delay(500.milliseconds)
+        }
     }
 }

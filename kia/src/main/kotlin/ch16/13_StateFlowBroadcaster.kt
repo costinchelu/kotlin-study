@@ -10,8 +10,11 @@ import kotlinx.coroutines.runBlocking
 import kotlin.time.Duration.Companion.milliseconds
 
 class Broadcaster {
+
     private val _messages = MutableStateFlow<List<String>>(emptyList())
+
     val messages = _messages.asStateFlow()
+
     fun beginBroadcasting(scope: CoroutineScope) {
         scope.launch {
             _messages.update { it + "Hello!" }

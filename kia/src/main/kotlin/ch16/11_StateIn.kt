@@ -12,7 +12,8 @@ fun main() {
         println(tempState.value)
         delay(800.milliseconds)
         println(tempState.value)
-        // 18
-        // -1
+
     }
 }
+// 18
+// -1

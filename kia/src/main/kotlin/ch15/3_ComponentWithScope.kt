@@ -4,6 +4,11 @@ import kia2e.coroutines.log
 import kotlinx.coroutines.*
 import kotlin.time.Duration.Companion.milliseconds
 
+
+// SupervisorJob is a kind of job that prevents uncaught exceptions from cancelling
+// other coroutines associated with the same scope and propagating the exception further
+// basically it associates coroutines with the lifecycle of a class
+// CoroutineScope != coroutineScope()
 class ComponentWithScope(dispatcher: CoroutineDispatcher = Dispatchers.Default) {
 
     private val scope = CoroutineScope(dispatcher + SupervisorJob())
@@ -32,6 +37,6 @@ class ComponentWithScope(dispatcher: CoroutineDispatcher = Dispatchers.Default) 
 fun main() {
     val c = ComponentWithScope()
     c.start()
-    Thread.sleep(2000)
+    Thread.sleep(2100)
     c.stop()
 }

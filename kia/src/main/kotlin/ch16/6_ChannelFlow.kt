@@ -13,10 +13,10 @@ suspend fun getRandomNumber(): Int {
     return Random.nextInt()
 }
 
-val randomNumbers = channelFlow { // <1>
+val randomNumbers = channelFlow {
     repeat(10) {
         launch {
-            send(getRandomNumber()) // <2>
+            send(getRandomNumber())
         }
     }
 }

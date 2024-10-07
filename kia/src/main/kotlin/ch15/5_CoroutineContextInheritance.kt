@@ -6,6 +6,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
+// a child coroutine will inherit parent's dispatcher, unless we specify one
 fun main() {
     runBlocking(Dispatchers.Default) {
         log(coroutineContext)

@@ -12,7 +12,9 @@ import kotlin.time.Duration.Companion.milliseconds
 enum class Direction { LEFT, RIGHT }
 
 class DirectionSelector {
+
     private val _direction = MutableStateFlow(Direction.LEFT)
+
     val direction = _direction.asStateFlow()
 
     fun turn(d: Direction) {

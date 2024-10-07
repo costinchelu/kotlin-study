@@ -5,7 +5,9 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 
 class ViewCounter {
-    private val _counter = MutableStateFlow(0) // <1>
+
+    private val _counter = MutableStateFlow(0)
+
     val counter = _counter.asStateFlow()
 
     fun increment() {
@@ -17,5 +19,4 @@ fun main() {
     val vc = ViewCounter()
     vc.increment()
     println(vc.counter.value)
-    // 1
 }

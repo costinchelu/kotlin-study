@@ -1,5 +1,6 @@
 package ch15.TimeoutOrNull
 
+import kia2e.coroutines.log
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withTimeoutOrNull
@@ -12,15 +13,17 @@ suspend fun calculateSomething(): Int {
 }
 
 fun main() = runBlocking {
+    log("Start")
+
     val quickResult = withTimeoutOrNull(500.milliseconds) {
         calculateSomething()
     }
-    println(quickResult)
+    log(quickResult)
     // null
 
     val slowResult = withTimeoutOrNull(5.seconds) {
         calculateSomething()
     }
-    println(slowResult)
+    log(slowResult)
     // 4
 }

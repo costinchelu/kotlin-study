@@ -9,6 +9,8 @@ import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.Duration.Companion.seconds
 
 
+// by using CoroutineScope, the parent coroutine will not wait for child coroutines to finish
+// Using GlobalScope breaks the hierarchy typically established out of the box when using structured concurrency
 fun main() {
     runBlocking {
         log("Parent start")
@@ -30,3 +32,9 @@ fun main() {
         log("Parent done!")
     }
 }
+/*
+0 [main] Parent start
+9 [DefaultDispatcher-worker-1] Child 1 started
+9 [main] Parent done!
+10 [DefaultDispatcher-worker-2] Child 2 started
+ */

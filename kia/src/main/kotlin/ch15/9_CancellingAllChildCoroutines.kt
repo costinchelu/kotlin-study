@@ -6,6 +6,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlin.time.Duration.Companion.milliseconds
 
+// when you cancel a coroutine all of its child coroutines also gets cancelled
 fun main() = runBlocking {
     val job = launch {
         launch {
@@ -21,3 +22,4 @@ fun main() = runBlocking {
     delay(200.milliseconds)
     job.cancel()
 }
+// 0 [main] I'm started

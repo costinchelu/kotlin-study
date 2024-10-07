@@ -13,12 +13,15 @@ suspend fun generateValue(): Int {
     return Random.nextInt(0, 10)
 }
 
+// coroutineScope function group coroutines waiting for them to finish
 suspend fun computeSum() {
     log("Computing a sum...")
     val sum = coroutineScope {
         val a = async { generateValue() }
         val b = async { generateValue() }
-        a.await() + b.await()
+        val c = async { generateValue() }
+        val d = async { generateValue() }
+        a.await() + b.await() + c.await() + d.await()
     }
     log("Sum is $sum")
 }

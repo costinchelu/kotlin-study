@@ -23,8 +23,7 @@ fun getTemperatures(): Flow<Int> {
     }
 }
 
-fun celsiusToFahrenheit(celsius: Int) =
-    celsius * 9.0 / 5.0 + 32.0
+fun celsiusToFahrenheit(celsius: Int) = celsius * 9.0 / 5.0 + 32.0
 
 fun main() {
     val temps = getTemperatures()
