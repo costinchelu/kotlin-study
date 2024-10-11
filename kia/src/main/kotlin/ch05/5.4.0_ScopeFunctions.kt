@@ -40,12 +40,13 @@ class Canvas {
 // initialized in some other place
 val client = Client()
 
+
 fun usingLet() {
     val addr: String? = getNextAddress()
 
     val confirm1: String? = if (addr != null) sendNotification(addr) else null
 
-    // LET will run the lambda (send the notification) ONLY IF ADDR IS NON-NULL
+    // LET{} will run the lambda (send the notification) ONLY IF addr IS NOT NULL
     val confirm2: String? = addr?.let { sendNotification(it) }
 }
 
@@ -120,3 +121,39 @@ fun main() {
     usingAlso()
     usingWith()
 }
+
+/*
+Examples of conversion from if else to scope functions:
+
+
+fun Order.isPaidWithKlarna(): Boolean =
+    if (transactions.isNotEmpty())
+        (transactions[0].type.isCreditCard() &&
+        isCardNumberContainingKlarnaBins(transactions[0].cardNumber))
+    else false
+
+
+fun Order.isPaidWithKlarna(): Boolean =
+    transactions.firstOrNull()?.let {
+        it.type.isCreditCard() &&
+        isCardNumberContainingKlarnaBins(it.cardNumber)
+    }
+    ?: false
+
+
+
+
+private fun isCardNumberContainingKlarnaBins(cardNumber: String?) =
+    if (cardNumber != null)
+        KLARNA_BINS.any { cardNumber.contains(it) }
+    else false
+
+
+private fun isCardNumberContainingKlarnaBins(cardNumber: String?) =
+    cardNumber?.let {
+        KLARNA_BINS.any { it in cardNumber } }
+    ?: false
+
+
+
+ */
