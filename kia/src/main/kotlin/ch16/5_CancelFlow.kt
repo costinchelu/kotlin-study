@@ -15,12 +15,14 @@ val counterFlow = flow {
     }
 }
 
+// it will collect the flow only 5 seconds, then it will cancel it
 fun main() = runBlocking {
     val collector = launch {
         counterFlow.collect {
             println(it)
         }
     }
+
     delay(5.seconds)
     collector.cancel()
 }

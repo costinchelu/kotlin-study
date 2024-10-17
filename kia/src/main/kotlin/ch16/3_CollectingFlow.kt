@@ -18,6 +18,10 @@ val letters = flow {
 
 fun main() {
 
+    // calling collect {} invokes the body of the flow builder function
+    // when the code calls emit it in turn calls the lambda passed to collect with the parameter passed to emit
+    // after that the function returns back into the body of the builder function and continues execution
+
 //    runBlocking {
 //        letters.collect {
 //            log("Collecting $it")

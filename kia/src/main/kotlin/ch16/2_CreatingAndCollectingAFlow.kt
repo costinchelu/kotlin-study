@@ -8,7 +8,7 @@ import kotlinx.coroutines.runBlocking
 import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.Duration.Companion.seconds
 
-// each of the values are available after 1 second, but only after the function finish execution
+// each of the values is available after 1 second, but only after the function finish execution
 suspend fun createValues(): List<Int> {
     return buildList {
         add(1)

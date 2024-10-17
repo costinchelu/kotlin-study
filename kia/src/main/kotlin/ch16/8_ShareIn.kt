@@ -14,6 +14,7 @@ import kotlin.time.Duration.Companion.milliseconds
 
 fun querySensor(): Int = Random.nextInt(-10..30)
 
+// this function returns a cold flow
 fun getTemperatures(): Flow<Int> {
     return flow {
         while (true) {
@@ -25,19 +26,27 @@ fun getTemperatures(): Flow<Int> {
 
 fun celsiusToFahrenheit(celsius: Int) = celsius * 9.0 / 5.0 + 32.0
 
+// transforming a cold flow to a shared (hot) flow using shareIn
 fun main() {
     val temps = getTemperatures()
     runBlocking {
         val sharedTemps = temps.shareIn(this, SharingStarted.Lazily)
+
+// with a normal cold flow, each collector would cause the sensor to be queried independently
+//        launch {
+//            temps.collect { log("$it Celsius") }
+//        }
+//        launch {
+//            temps.collect { log("${celsiusToFahrenheit(it)} Fahrenheit") }
+//        }
+
+        // in this case (communicating with an external source) it would be better to use a shared flow
+        // in this case we are receiving only one reading and both collections are sharing the same flow
         launch {
-            sharedTemps.collect {
-                log("$it Celsius")
-            }
+            sharedTemps.collect { log("$it Celsius") }
         }
         launch {
-            sharedTemps.collect {
-                log("${celsiusToFahrenheit(it)} Fahrenheit")
-            }
+            sharedTemps.collect { log("${celsiusToFahrenheit(it)} Fahrenheit") }
         }
     }
 }

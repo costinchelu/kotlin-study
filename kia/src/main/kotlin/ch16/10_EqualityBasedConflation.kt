@@ -35,4 +35,8 @@ fun main() = runBlocking {
     switch.turn(Direction.LEFT)
     delay(200.milliseconds)
     switch.turn(Direction.LEFT)
+    delay(200.milliseconds)
+    switch.turn(Direction.RIGHT)
+    // no new elements are emitted when the value is assigned the same value as is already set
+// - state flows perform equality-based conflation
 }
