@@ -20,7 +20,5 @@ val searchQuery = flow {
 fun main() = runBlocking {
     searchQuery
         .debounce(250.milliseconds)
-        .collect {
-            log("Searching for $it")
-        }
+        .collect { log("Searching for $it") }
 }

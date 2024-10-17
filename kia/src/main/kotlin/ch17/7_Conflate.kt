@@ -1,5 +1,6 @@
 package ch17
 
+import kia2e.coroutines.getTemperatures
 import kia2e.coroutines.log
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.conflate

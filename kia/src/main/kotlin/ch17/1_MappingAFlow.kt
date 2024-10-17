@@ -10,9 +10,8 @@ fun main() {
         emit("May")
         emit("Sue")
     }
-    val uppercasedNames = names.map {
-        it.uppercase()
-    }
+    val uppercasedNames = names.map { it.uppercase() }
+
     runBlocking {
         uppercasedNames.collect { print("$it ") }
     }

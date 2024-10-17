@@ -1,5 +1,6 @@
 package ch16
 
+import kia2e.coroutines.getTemperatures
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.runBlocking

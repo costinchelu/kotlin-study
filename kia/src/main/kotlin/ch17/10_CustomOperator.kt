@@ -20,7 +20,5 @@ fun Flow<Double>.averageOfLast(n: Int): Flow<Double> =
 fun main() = runBlocking {
     flowOf(1.0, 2.0, 30.0, 121.0)
         .averageOfLast(3)
-        .collect {
-            print("$it ")
-        }
+        .collect { print("$it ") }
 }

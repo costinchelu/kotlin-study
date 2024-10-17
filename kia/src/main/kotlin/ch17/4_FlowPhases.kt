@@ -1,5 +1,6 @@
 package ch17
 
+import kia2e.coroutines.getTemperatures
 import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.take
 import kotlinx.coroutines.runBlocking
@@ -15,7 +16,5 @@ fun main() = runBlocking {
                 println("Completed!")
             }
         }
-        .collect {
-            println(it)
-        }
+        .collect { println(it) }
 }
