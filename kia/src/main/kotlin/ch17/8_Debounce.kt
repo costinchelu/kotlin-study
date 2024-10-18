@@ -17,8 +17,13 @@ val searchQuery = flow {
     emit("Kotlin")
 }
 
+// filter out by timeout
 fun main() = runBlocking {
     searchQuery
         .debounce(250.milliseconds)
         .collect { log("Searching for $it") }
 }
+/*
+0 [main] Searching for Kotl
+245 [main] Searching for Kotlin
+ */

@@ -25,6 +25,7 @@ suspend fun getProfileFromNetwork(id: Int): String {
     return "Profile[$id]"
 }
 
+// we have a cold flow of values received from DB, but the network is slow. We can keep the values in a buffer
 fun main() {
     val ids = getAllUserIds()
     runBlocking {
@@ -33,4 +34,25 @@ fun main() {
             .map { getProfileFromNetwork(it) }
             .collect { log("Got $it") }
     }
+/*
+    0 [main] Emitting!
+    212 [main] Emitting!
+    413 [main] Emitting!
+    2027 [main] Got Profile[0]
+    4034 [main] Got Profile[1]
+    6038 [main] Got Profile[2]
+*/
 }
+
+/*
+Without the buffer we would have:
+
+0 [main] Emitting!
+2026 [main] Got Profile[0]
+2232 [main] Emitting!
+4238 [main] Got Profile[1]
+4444 [main] Emitting!
+6446 [main] Got Profile[2]
+
+so for each slow network operation, db will wait for previous profile to be collected.
+ */
