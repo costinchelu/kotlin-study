@@ -8,6 +8,7 @@ import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.runBlocking
 
+// Switching dispatchers (context)
 fun main() {
     runBlocking {
         flowOf(1)
