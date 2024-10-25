@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "2.0.0"
+//    application
 }
 
 
@@ -29,3 +30,14 @@ tasks.test {
 kotlin {
     jvmToolchain(17)
 }
+
+//application {
+//    mainClass.set("ro.ccar.kia.ApplicationKt")
+//}
+
+/*
+default source file locations:
+
+src/main/kotlin
+src/main/java
+ */
