@@ -6,21 +6,18 @@ import kotlinx.coroutines.runBlocking
 
 class UnhappyFlowException : Exception()
 
+// flows can also throw exceptions
+// when collected this flow will emit 5 elements (Int 0 to 4), then will throw a custom exception
 val exceptionalFlow = flow {
-    repeat(5) { number ->
-        emit(number)
-    }
+    repeat(5) { number -> emit(number) }
     throw UnhappyFlowException()
 }
 
 fun main() = runBlocking {
-    val transformedFlow = exceptionalFlow.map {
-        it * 2
-    }
+    val transformedFlow = exceptionalFlow.map { it * 2 }
+
     try {
-        transformedFlow.collect {
-            print("$it ")
-        }
+        transformedFlow.collect { print("$it ") }
     } catch (u: UnhappyFlowException) {
         println("\nHandled: $u")
     }

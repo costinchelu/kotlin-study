@@ -9,11 +9,12 @@ private val topLevelHandler = CoroutineExceptionHandler { _, e ->
     println("[TOP] ${e.message}")
 }
 
+// handlers installed in the context of coroutines that aren't root coroutines are never used
 private val intermediateHandler = CoroutineExceptionHandler { _, e ->
     println("[INTERMEDIATE] ${e.message}")
 }
 
-@OptIn(DelicateCoroutinesApi::class) // <1>
+@OptIn(DelicateCoroutinesApi::class)
 fun main() {
     GlobalScope.launch(topLevelHandler) {
         launch(intermediateHandler) {
@@ -22,3 +23,4 @@ fun main() {
     }
     Thread.sleep(1000)
 }
+// [TOP] Ouch!
