@@ -19,18 +19,19 @@ fun evalWhen(e: Expr): Int =
             throw IllegalArgumentException("Unknown expression")
     }
 
+class SmartCastsKotlin {
 
-fun main() {
-    println(evalIf(Sum(Sum(Num(1), Num(2)), Num(4))))
-}
-
-
-fun evalIf(e: Expr): Int {
-    if (e is Num) {
-        return e.value
+    fun main() {
+        println(evalIf(Sum(Sum(Num(1), Num(2)), Num(4))))
     }
-    if (e is Sum) {
-        return evalIf(e.right) + evalIf(e.left)
+
+    private fun evalIf(e: Expr): Int {
+        if (e is Num) {
+            return e.value
+        }
+        if (e is Sum) {
+            return evalIf(e.right) + evalIf(e.left)
+        }
+        throw IllegalArgumentException("Unknown expression")
     }
-    throw IllegalArgumentException("Unknown expression")
 }
