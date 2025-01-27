@@ -9,7 +9,7 @@ record Num(int value) implements Expr { }
 record Sum(Expr left, Expr right) implements Expr { }
 
 
-public class SmartCastsJava {
+public class SmartCastsJ {
 
     public static void main(String[] args) {
         System.out.println(evalIf(new Sum(new Sum(new Num(1), new Num(2)), new Num(4))));
