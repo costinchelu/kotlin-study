@@ -19,12 +19,12 @@ public class BasicsJ {
         final int y = 2;
     }
 
-    private void instantiationExample() {
+    void instantiationExample() {
         // instantiating an object from Kotlin code
         BasicsK basicsK = new BasicsK();
     }
 
-    private char switchExample(int value) {
+    char switchExample(int value) {
         return switch (value) {
             case 0, 1, 2, 3, 4 -> 'a';
             case 5 -> 'b';
@@ -40,25 +40,40 @@ public class BasicsJ {
         };
     }
 
-    private char ifExample(int value) {
-        char result;
-        if (value >= 0 && value < 5) {
-            result = 'a';
-        } else if (value == 5) {
-            result = 'b';
-        } else if (value == 6 || value == 7 || value == 8) {
-            result = 'c';
-        } else if (value == 9) {
-            result = 'd';
-        } else if (value >= 10 && value <= 20) {
-            result = 'e';
-        } else {
-            throw new IllegalArgumentException();
+    void oldCaseExample(int value) {
+        String s;
+        switch (value) {
+            case 0, 1, 2, 3, 4:
+            {
+                s = "a";
+                break;
+            }
+            case 5:
+            {
+                s = "b";
+                break;
+            }
+            case 6, 7, 8:
+            {
+                s = "c";
+                break;
+            }
+            case 9:
+            {
+                s = "d";
+                break;
+            }
+            default:
+            {
+                s = "e";
+                break;
+            }
         }
-        return result;
+        System.out.println(s);
     }
 
-    private void forLoopExample() {
+
+    void forLoopExample() {
         for (int i = 0; i <= 10; i++) {
             System.out.println(i);
         }
@@ -83,5 +98,34 @@ public class BasicsJ {
         int sum = numbers.stream()
                 .mapToInt(Integer::intValue)
                 .sum();
+    }
+
+    void assignFromIf(int a, int b) {
+        int max;
+        if (a > b) {
+            System.out.println("choose a(" + a + ")");
+            max = a;
+        } else {
+            System.out.println("choose b(" + b + ")");
+            max = b;
+        }
+        System.out.println("Max: " + max);
+    }
+
+    void assignIfNotNull(String value) {
+        if (value != null) {
+            int length = value.length();
+            System.out.println(length);
+        }
+        Integer length2 = (value != null) ? value.length() : null;
+        System.out.println(length2);
+    }
+
+    static void staticMethod1() {
+        System.out.println("I am calling the user...");
+    }
+
+    static int staticMethod2() {
+        return 12;
     }
 }

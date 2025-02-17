@@ -7,7 +7,7 @@ const val z: Int = 3        // const is used only in compile time
 
 class BasicsK {
 
-    fun methodReturningUnit(param1: String, param2: Int) {
+    private fun methodReturningUnit(param1: String, param2: Int) {
 
         // variable
         var x: Int = 1
@@ -56,6 +56,28 @@ class BasicsK {
     fun functionalExample() {
         val numbers = listOf(1, 2, 3, 4, 5)
         val sum = numbers.sum()
+    }
+
+    fun assignFromIf(a: Int, b: Int) {
+        val max =
+            if (a > b) {
+                println("choose a($a)")
+                a
+            } else {
+                println("choose b($b)")
+                b
+            }
+        println("Max: $max")
+    }
+
+    fun assignIfNotNull(value: String?) {
+        value?.let {
+            val length = value.length
+            println(length)
+        }
+
+        val length2 = value?.length
+        println(length2)
     }
 
     fun compactFunction1() = println("I am calling the user...");
