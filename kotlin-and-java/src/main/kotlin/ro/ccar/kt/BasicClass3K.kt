@@ -19,7 +19,7 @@ class BasicCLass4K(parent: BasicClassK) {
         }
 }
 
-
+// instantiation
 fun main() {
     val obj1 = BasicClass3K()
     obj1.defaultName = "name"

@@ -52,6 +52,7 @@ class AnOpenClassJ {
     }
 }
 
+
 final class ADataClassJ {
 
     private final String str;
@@ -90,6 +91,21 @@ final class ADataClassJ {
     public int hashCode() {
         return Objects.hash(str);
     }
+}
+
+// a kind of data class
+record ARecordJ(String str) {
+
+    public ARecordJ(ARecordJ other) {
+        this(other.str());
+    }
+    // records automatically provides:
+    //          canonical constructor,
+    //          toString(),
+    //          equals(),
+    //          hashCode()
+    //          getter methods.
+    // However, they do not automatically provide a copy constructor
 }
 
 

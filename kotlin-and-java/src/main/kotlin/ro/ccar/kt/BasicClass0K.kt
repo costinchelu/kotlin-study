@@ -1,3 +1,3 @@
 package ro.ccar.kt
 
-class EmptyClassK
+class BasicClass0K

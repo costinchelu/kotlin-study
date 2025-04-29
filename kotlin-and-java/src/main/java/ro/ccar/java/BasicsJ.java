@@ -1,6 +1,7 @@
 package ro.ccar.java;
 
-import can.be.named.as_needed.BasicsK;
+import ro.ccar.kt.BasicsK;
+
 
 import java.util.Arrays;
 import java.util.List;
@@ -127,5 +128,10 @@ public class BasicsJ {
 
     static int staticMethod2() {
         return 12;
+    }
+
+    public static void main(String[] args) {
+        BasicsK basicsK = new BasicsK();
+        basicsK.forLoopExample();
     }
 }

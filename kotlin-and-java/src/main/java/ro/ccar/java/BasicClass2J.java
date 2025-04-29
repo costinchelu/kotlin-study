@@ -13,7 +13,7 @@ public class BasicClass2J {
         this.age = age;
     }
 
-    public BasicClass2J(String name,int age, BasicClassJ parent) {
+    public BasicClass2J(String name, int age, BasicClassJ parent) {
         this.name = name;
         this.age = age;
         this.parent = parent;

@@ -1,9 +1,11 @@
 package ro.ccar.kt
 
+// primary constructor between ()
 class BasicCLass2K(val name: String, var age: Int) {
 
     private var parent: BasicClassK? = null
 
+    // secondary constructor (calls primary constructor)
     constructor(name: String, age: Int, parent: BasicClassK) : this(name, age) {
         this.parent = parent
     }

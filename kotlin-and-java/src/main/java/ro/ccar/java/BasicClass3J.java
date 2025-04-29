@@ -15,6 +15,7 @@ public class BasicClass3J {
     }
 }
 
+// instantiation
 class Test {
     public static void main(String[] args) {
         BasicClass3J basicClass3J = new BasicClass3J();
