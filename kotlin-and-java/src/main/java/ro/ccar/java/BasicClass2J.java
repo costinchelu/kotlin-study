@@ -6,14 +6,14 @@ public class BasicClass2J {
 
     private int age;
 
-    private BasicClassJ parent;
+    private BasicClass1J parent;
 
     public BasicClass2J(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
-    public BasicClass2J(String name, int age, BasicClassJ parent) {
+    public BasicClass2J(String name, int age, BasicClass1J parent) {
         this.name = name;
         this.age = age;
         this.parent = parent;
@@ -35,11 +35,11 @@ public class BasicClass2J {
         this.age = age;
     }
 
-    public BasicClassJ getParent() {
+    public BasicClass1J getParent() {
         return parent;
     }
 
-    public void setParent(BasicClassJ parent) {
+    public void setParent(BasicClass1J parent) {
         this.parent = parent;
     }
 }

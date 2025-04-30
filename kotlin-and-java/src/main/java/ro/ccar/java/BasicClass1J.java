@@ -1,10 +1,10 @@
 package ro.ccar.java;
 
-public class BasicClassJ {
+public class BasicClass1J {
 
     private String name;
 
-    public BasicClassJ(String name) {
+    public BasicClass1J(String name) {
         this.name = name;
     }
 }

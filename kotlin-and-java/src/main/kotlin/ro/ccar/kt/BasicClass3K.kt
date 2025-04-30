@@ -10,7 +10,7 @@ class BasicCLass4K(parent: BasicClassK) {
 
     private var _parent: BasicClassK? = parent
 
-    // example with Kotlin Property with custom accessors
+    // example with Kotlin Property with custom accessors,
     // in this case the _parent acts as a backing field for the parent property
     var parent: BasicClassK?
         get() = _parent
