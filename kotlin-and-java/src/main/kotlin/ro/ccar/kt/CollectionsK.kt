@@ -26,7 +26,8 @@ class CollectionsK {
 
     fun joinToStringWithOptions(clientIds: List<Long>) {
         println(clientIds
-            .joinToString("; ", "clientIds: ", ".") { "ID: $it" }) // e.g. "clientIds: ID: 7; ID: 19; ID: 33."
+            .joinToString("; ", "clientIds: ", ".") { "ID: $it" })
+    // e.g. "clientIds: ID: 7; ID: 19; ID: 33."
     }
 
     fun instanceOf(clientIds: List<Number>): List<Long> {
